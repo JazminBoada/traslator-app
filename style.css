@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(71, 126, 246);
+  background: linear-gradient(
+    140deg,
+    rgba(71, 126, 246, 1) 14%,
+    rgba(124, 162, 246, 1) 69%
+  );
+  padding: 0 10px;
+  min-height: 100vh;
+}
+
+.container {
+  background: #fff;
+  max-width: 690px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 7px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+.wrapper {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/*Lineas divisorias apenas visinbles entre los dos bloques de texto*/
+/*Primero la de abajo*/
+.wrapper .text-input {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+/*Luego la del medio*/
+.text-input .to-text {
+  border-radius: 0px;
+  border-left: 1px solid #ccc;
+}
+
+.text-input textarea {
+  height: 250px;
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  background: none;
+  font-size: 15px;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.text-input textarea::placeholder {
+  color: #b7b6b6;
+}
+
+/*Selecciono de este modo las clases para poder aplicar space-between entre los elementos*/
+.controls,
+li,
+.icons,
+.icons i {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls {
+  list-style: none;
+  padding: 12px 15px;
+}
+
+.controls .row .icons {
+  width: 38%;
+}
+
+/*Propiedades de los iconos*/
+.controls .row .icons i {
+  width: 50px;
+  color: #477ef6;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  justify-content: center;
+}
+
+/*Agrego lineas chiquitas divisorias*/
+.controls .row.from .icons {
+  border-right: 1px solid #ccc;
+  padding-right: 15px;
+}
+
+.controls .row.to .icons {
+  border-left: 1px solid #ccc;
+  padding-left: 15px;
+}
+
+.control .row select {
+  color: #333;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background: none;
+  padding-left: 5px;
+}
+
+.select-country {
+  padding: 5px 0px 5px 30px;
+  border: none;
+  outline: none;
+  background-color: #477ef6;
+  color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 40px;
+  transition: height 0.3s ease;
+}
+
+/*Propiedades del webkit*/
+.text-input textarea::-webkit-scrollbar {
+  width: 4px;
+}
+
+.controls .row select::-webkit-scrollbar {
+  width: 8px;
+}
+
+.text-input textarea::-webkit-scrollbar,
+.controls .row select::-webkit-scrollbar-track {
+  color: #fff;
+}
+
+/*Cambio el como se ve el recuadro cuando le doy click al select*/
+.text-input textarea::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 8px;
+}
+
+.controls .row select::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 8px;
+  border-right: 2px solid #fff;
+}
+
+.controls .exchange {
+  color: #8c8c8c;
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+/*Activo la animacion del click sobre los iconos*/
+.controls i:active {
+  transform: scale(0.9);
+}
+
+.container button {
+  color: #fff;
+  background: #477ef6;
+  border: none;
+  outline: none;
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/*Responsive*/
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  .wrapper .text-input {
+    flex-direction: column;
+  }
+
+  .text-input .to-text {
+    border-left: 0px;
+    border-top: 1px solid #ccc;
+  }
+
+  .text-input textarea {
+    height: 200px;
+  }
+
+  .controls .row .icons {
+    display: none;
+  }
+
+  .container button {
+    padding: 13px;
+    font-size: 15px;
+  }
+
+  .controls .row select {
+    font-size: 16px;
+  }
+
+  .controls .exchange {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 375px) {
+  .controls .row select {
+    font-size: 14px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 320px) {
+  .controls .row select {
+    font-size: 13px;
+    padding: 2px;
+  }
+
+  .controls .exchange {
+    padding: 5px;
+  }
+}
