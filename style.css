@@ -13,7 +13,7 @@ body {
   background: linear-gradient(
     140deg,
     rgba(71, 126, 246, 1) 14%,
-    rgba(124, 162, 246, 1) 69%
+    rgba(209, 115, 230, 1) 89%
   );
   padding: 0 10px;
   min-height: 100vh;
@@ -26,6 +26,10 @@ body {
   padding: 30px;
   border-radius: 7px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+h1 {
+  display: none;
 }
 
 .wrapper {
@@ -88,7 +92,13 @@ li,
   font-size: 14px;
   cursor: pointer;
   transition: transform 0.2s ease;
+  display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.controls .row .icons i:hover {
+  transform: scale(1.2);
 }
 
 /*Agrego lineas chiquitas divisorias*/
@@ -121,6 +131,12 @@ li,
   overflow: hidden;
   height: 40px;
   transition: height 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.select-country:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 /*Propiedades del webkit*/
@@ -172,6 +188,11 @@ li,
   border-radius: 20px;
   font-size: 14px;
   cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.container button:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /*Responsive*/
@@ -208,6 +229,23 @@ li,
 
   .controls .exchange {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 425px) {
+  body {
+    background: white;
+  }
+
+  .container {
+    border-radius: none;
+    box-shadow: none;
+  }
+
+  h1 {
+    display: contents;
+    color: #477ef6;
+    font-size: 2rem;
   }
 }
 
